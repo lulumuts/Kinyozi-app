@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # vue-app
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -34,7 +33,3 @@ npm run build
 ```sh
 npm run lint
 ```
-=======
-# Kinyozi-app
-Vue3 prototype for Kinyozi redesign
->>>>>>> 141e5df81738030c3598b4f5af8388da750751c8
