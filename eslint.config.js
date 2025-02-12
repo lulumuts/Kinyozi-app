@@ -1,19 +1,20 @@
-import js from '@eslint/js'
-import pluginVue from 'eslint-plugin-vue'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-
-export default [
-  {
-    name: 'app/files-to-lint',
-    files: ['**/*.{js,mjs,jsx,vue}'],
+module.exports = {
+  root: true,
+  env: {
+    node: true
   },
-
-  {
-    name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    '@vue/standard',
+    '@vue/prettier'
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest'
   },
-
-  js.configs.recommended,
-  ...pluginVue.configs['flat/essential'],
-  skipFormatting,
-]
+  rules: {
+    semi: ['error', 'always'],
+    indent: ['error', 2],
+    'vue/multi-word-component-names': 'off'
+  }
+};
