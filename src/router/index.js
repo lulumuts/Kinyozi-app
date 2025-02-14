@@ -10,12 +10,20 @@ const router = createRouter({
       component: EventListView,
     },
     {
-      path: '/login',
-      name: 'login',
+      path: '/onboarding',
+      name: 'onboarding',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/LoginView.vue'),
+      component: () => import('../views/OnboardingView.vue'),
+    },
+    {
+      path: '/browse',
+      name: 'browse',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/BrowseView.vue'),
     },
     {
       path: '/event/:id',

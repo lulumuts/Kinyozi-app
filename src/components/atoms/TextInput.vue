@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style scoped>
-input {
+input, select {
     margin: auto;
     padding: 6% 4%;
     width: 100%;

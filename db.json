@@ -30,5 +30,31 @@
             "time": "11:00",
             "organizer": "Carey Waless"
         }
+    ],
+    "stylists": [
+        {
+            "id": 1,
+            "name": "Tim Ombima",
+            "styles": ["Barber", "Short Natural"],
+            "location": "Meow Town",
+            "price": "January 28, 2022",
+            "image": "@/assets/img/TimOmbima.png"
+        },
+        {
+            "id": 2,
+            "name": "Gina Muchiri",
+            "styles": ["Barber", "Short Natural"],
+            "location": "Meow Town",
+            "price": "January 28, 2022",
+            "image": "@/assets/img/TimOmbima.png"
+        },
+        {
+            "id": 3,
+            "name": "Amina Juma",
+            "styles": ["Barber", "Short Natural"],
+            "location": "Meow Town",
+            "price": "January 28, 2022",
+            "image": "@/assets/img/TimOmbima.png"
+        }
     ]
 }

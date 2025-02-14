@@ -1,21 +1,22 @@
 <script setup>
 import BaseInput from '@/components/atoms/TextInput.vue'
-import BaseSelect from '@/components/atoms/BaseSelect.vue'
+import BaseSelect from '@/components/atoms/SelectInput.vue'
 import OnboardingForm from '@/components/organisms/OnboardingForm.vue'
+import Browse from '@/components/templates/Browse.vue'
 import axios from 'axios'
 import { ref, computed } from 'vue'
 
 
-const currentStep =ref(1)
+const currentStep =ref(0)
 
 const backgroundColor = computed(() => {
-  switch (currentStep.value) {
-    case 1:
-      return '#099251';
-    case 2:
-      return 'bg-blue-600';
-  }
-  
+  if(currentStep.value <= 3 && currentStep.value !== 0) {
+    return '#099251';
+  } else if (currentStep.value === 4){
+    return '#F5AE20';
+  }else {
+    return '#F15235';
+  }  
 })
 
   
@@ -58,8 +59,9 @@ const backgroundColor = computed(() => {
 
 
 <template>
-  <div class="login" :style="{backgroundColor: backgroundColor}">
+  <div class="container" :style="{backgroundColor: backgroundColor}">
     <OnboardingForm @updateStep="currentStep = $event"/>
+    <Browse />
 
     <!-- <form @submit.prevent="sendForm"> 
       <fieldset>
@@ -96,8 +98,8 @@ const backgroundColor = computed(() => {
 
 </template>
 
-<style>
-  .login {
+<style scoped>
+  .container {
     border-radius: 24px;
     border: 4px solid #FFE2A7;
     margin:auto;
@@ -106,15 +108,11 @@ const backgroundColor = computed(() => {
     align-items:center;
     flex-direction: column;
     height: 92vh;
-    /* width: 45vw; */
-    /* background-color: #099251; */
-
-   
     overflow:hidden;
   }
 @media (min-width: 1024px) {
 
-  .login {
+  .container {
     margin:auto;
     display: inline-flex;
     justify-content: center;
