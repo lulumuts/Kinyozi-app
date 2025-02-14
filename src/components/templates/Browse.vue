@@ -2,12 +2,33 @@
     <div class="browse-view">
         <h1>Explore our Selection.</h1>
         <p>(Click to Save)</p>
+
+        <div v-for="style in stylists" :key="style">
+            {{ style }}
+            <img :src="style.image" />
+        </div>
         <Toggle />
     </div>
 </template>
 
 <script setup>
 import Toggle from '@/components/atoms/Toggle.vue';
+import axios from 'axios'
+import { ref, onMounted } from 'vue'
+
+
+const stylists = ref([])
+
+onMounted(() => {
+    try {
+        axios.get('https://my-json-server.typicode.com/lulumuts/Kinyozi-app/stylists').then((response) => stylists.value = response.data)
+
+    } catch(error) {
+        console.log('oops', error)
+    }
+}
+) 
+
 </script>
 
 <style scoped>

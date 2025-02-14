@@ -38,7 +38,7 @@
             "styles": ["Barber", "Short Natural"],
             "location": "Meow Town",
             "price": "January 28, 2022",
-            "image": "@/assets/img/TimOmbima.png"
+            "image": "/img/TimOmbima.png"
         },
         {
             "id": 2,
@@ -46,7 +46,7 @@
             "styles": ["Barber", "Short Natural"],
             "location": "Meow Town",
             "price": "January 28, 2022",
-            "image": "@/assets/img/TimOmbima.png"
+            "image": "/img/TimOmbima.png"
         },
         {
             "id": 3,
@@ -54,7 +54,7 @@
             "styles": ["Barber", "Short Natural"],
             "location": "Meow Town",
             "price": "January 28, 2022",
-            "image": "@/assets/img/TimOmbima.png"
+            "image": "/img/TimOmbima.png"
         }
     ]
 }
