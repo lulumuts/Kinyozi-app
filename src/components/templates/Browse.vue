@@ -5,10 +5,9 @@
         <Toggle />
 
         <div v-for="style in stylists" :key="style">
-
             <StylistCard 
             :Price="style.price"
-            :Image="style.image.replace('@/assets/', '/')"
+            :Image="style.image"
             :Name="style.name"
             :Location="style.location"
             :Styles="style.styles"
