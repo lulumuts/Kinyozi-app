@@ -36,25 +36,25 @@
             "id": 1,
             "name": "Tim Ombima",
             "styles": ["Barber", "Short Natural"],
-            "location": "Meow Town",
-            "price": "January 28, 2022",
+            "location": "Kenyatta Market",
+            "price": "$",
             "image": "/img/TimOmbima.png"
         },
         {
             "id": 2,
             "name": "Gina Muchiri",
-            "styles": ["Barber", "Short Natural"],
-            "location": "Meow Town",
-            "price": "January 28, 2022",
-            "image": "/img/TimOmbima.png"
+            "styles": ["Braids", "Weaves", "Natural"],
+            "location": "Kenyatta Market",
+            "price": "$$",
+            "image": "/img/GinaMuchiri.png"
         },
         {
             "id": 3,
             "name": "Amina Juma",
-            "styles": ["Barber", "Short Natural"],
-            "location": "Meow Town",
-            "price": "January 28, 2022",
-            "image": "/img/TimOmbima.png"
+            "styles": ["Wigs"],
+            "location": "Kenyatta Market",
+            "price": "$$",
+            "image": "/img/NuruKip.png"
         }
     ]
 }
