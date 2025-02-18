@@ -1,5 +1,8 @@
 <template>
-    <div class="stylist-card container-fluid">
+    <div 
+    :class="['stylist-card', 'container-fluid', {'hovering': hovered}]"
+    @mouseover="setHover(true)"
+    @mouseleave="setHover(false)">
         <div class="left">
             <img :src="Image" />
         </div>
@@ -18,7 +21,7 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 
 const props = defineProps({
     Name: {
@@ -41,6 +44,12 @@ const props = defineProps({
         default: ''
     },
 })
+
+const hovered = ref(false)
+
+function setHover(isHovered) {
+    hovered.value = isHovered
+}
 </script>
 
 <style scoped>
@@ -68,7 +77,7 @@ img {
 .left {
     border: 2px solid #FFE2A7;
     border-radius: 100%;
-    margin: auto;
+    margin: 4%;
     display:flex;
     padding: 2%;
     height: 104px;
@@ -110,10 +119,22 @@ img {
 }
 
 .right .price{
-    margin-bottom: 10px;
-    margin-right: -20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-right: -32px;
     padding: 0;
     float: right;
+}
+
+.hovering {
+    background: #F5AE20;
+    border: 2px solid #000;
+    cursor: pointer;
+    color: #000;
+}
+
+.hovering .left{
+    border: 2.5px solid #000;
 }
 
 </style>

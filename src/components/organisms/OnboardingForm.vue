@@ -255,4 +255,8 @@ li {
     justify-content:center;
 }
 
+.next-button{
+    border-radius: 16px;
+}
+
 </style>

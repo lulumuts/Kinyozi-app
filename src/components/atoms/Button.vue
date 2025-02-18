@@ -43,6 +43,7 @@ const props = defineProps({
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
+    border-radius: 16px;
 }
 
 .next-button p{

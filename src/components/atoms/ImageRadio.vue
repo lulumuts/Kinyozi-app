@@ -16,7 +16,7 @@
 
 
 <script setup>
-import { ref,reactive, computed } from 'vue'
+import { ref,reactive } from 'vue'
 const images = reactive([
     {url: new URL('@/assets/img/BraidsImage.png', import.meta.url).href, value: 'Braids', selected: false},
     {url: new URL('@/assets/img/LinesImage.png', import.meta.url).href, value: 'Lines', selected: false},

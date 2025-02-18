@@ -61,7 +61,6 @@ const backgroundColor = computed(() => {
 <template>
   <div class="container" :style="{backgroundColor: backgroundColor}">
     <OnboardingForm @updateStep="currentStep = $event"/>
-    <Browse />
 
     <!-- <form @submit.prevent="sendForm"> 
       <fieldset>

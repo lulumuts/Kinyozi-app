@@ -1,7 +1,8 @@
 <template>
     <div class="browse-view">
-        <h1>Explore our Selection.</h1>
+        <h1>Explore our <br>Selection.</h1>
         <p>(Click to Save)</p>
+        <Toggle />
 
         <div v-for="style in stylists" :key="style">
 
@@ -13,7 +14,6 @@
             :Styles="style.styles"
             />
         </div>
-        <Toggle />
     </div>
 </template>
 
@@ -57,7 +57,9 @@ onMounted(() => {
 }
 
 .browse-view h1{
-    margin-top: 20vh;
+    text-align: left;
+    margin: 0;
+    float: left;
 }
 
 .browse-view p{
