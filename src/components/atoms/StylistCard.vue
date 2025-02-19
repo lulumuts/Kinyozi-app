@@ -58,7 +58,7 @@ function setHover(isHovered) {
     border-radius: 16px;
     display: flex;
     justify-content:space-around;
-    width: 400px;
+    width: 34vh;
     margin: 16px 0;
 }
 
@@ -70,7 +70,8 @@ img {
     text-align: left;
 }
 
-.left, .right{
+.left, 
+.right{
     padding: 20px;
 }
 
@@ -89,6 +90,7 @@ img {
     display: block;
     justify-content:center;
     margin: auto;
+    width: 16vh;
 }
 
 
@@ -118,10 +120,10 @@ img {
     margin: 0;
 }
 
-.right .price{
-    margin-top: -20px;
+.right .price {
+    margin-top: -32px;
     margin-bottom: 20px;
-    margin-right: -32px;
+    margin-right: -20px;
     padding: 0;
     float: right;
 }
@@ -134,7 +136,7 @@ img {
 }
 
 .hovering .left{
-    border: 2.5px solid #000;
+    border: 2px solid #000;
 }
 
 </style>

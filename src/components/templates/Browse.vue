@@ -1,10 +1,17 @@
 <template>
     <div class="browse-view">
-        <h1>Explore our <br>Selection.</h1>
+        <div class="header">
+            <h1>Explore our <br>Selection.</h1>
         <p>(Click to Save)</p>
-        <Toggle />
+        <Toggle 
+        v-model="isLeftActive"
+        leftLabel="Stylists"
+        rightLabel="Salons"
+        />
+        </div>
+    
 
-        <div v-for="style in stylists" :key="style">
+        <div class="browse-items" v-for="style in stylists" :key="style">
             <StylistCard 
             :Price="style.price"
             :Image="style.image"
@@ -22,7 +29,7 @@ import StylistCard from '@/components/atoms/StylistCard.vue';
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
-
+const isLeftActive = ref(true)
 const stylists = ref([])
 const styles = ref(null)
 onMounted(() => {
@@ -51,10 +58,16 @@ onMounted(() => {
     color: #FFE2A7;
     font-family: "Azeret Mono", serif;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     overflow: scroll;
 }
 
+.browse-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 .browse-view h1{
     text-align: left;
     margin: 0;
@@ -65,4 +78,15 @@ onMounted(() => {
     font-size: 16px;
     text-align: left;
 }
+
+.header{
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.header .toggle{
+    margin: 16px auto;
+}
+
 </style>
