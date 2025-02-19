@@ -52,9 +52,83 @@
             "id": 3,
             "name": "Amina Juma",
             "styles": ["Wigs"],
-            "location": "Kenyatta Market",
+            "location": "Kilimani, Nairobi",
             "price": "$$",
             "image": "/img/AminaJuma.png"
+        },
+        {
+            "id": 4,
+            "name": "Emily Anyango",
+            "styles": ["Locs", "Braids"],
+            "location": "Kenyatta Market",
+            "price": "$",
+            "image": "/img/TimOmbima.png"
+        },
+        {
+            "id": 5,
+            "name": "Cynthia Aweso",
+            "styles": ["Locs", "Natural"],
+            "location": "Lavington, Nairobi",
+            "price": "$$$",
+            "image": "/img/CynthiaAweso.png"
+        },
+        {
+            "id": 6,
+            "name": "Tanya Mwiti",
+            "styles": ["Wigs"],
+            "location": "Village Market",
+            "price": "$$",
+            "image": "/img/TanyaMwiti.png"
+        }
+    ],
+    "salons": [
+        {
+            "id": 1,
+            "name": "Talebu",
+            "styles": ["Braids", "Short Natural", "Weave", "Barber"],
+            "location": "Westlands, Nairobi",
+            "price": "$$",
+            "image": "/img/Talebu.png"
+        },
+        {
+            "id": 2,
+            "name": "Rapunzel",
+            "styles": ["Braids", "Weaves", "Natural"],
+            "location": "Kilimani Nairobi",
+            "price": "$",
+            "image": "/img/Rapunzel.png"
+        },
+        {
+            "id": 3,
+            "name": "Divas Beauty",
+            "styles": ["Wigs", "Weaves"],
+            "location": "Westlands",
+            "price": "$$$",
+            "image": "/img/Divas.png"
+        },
+        {
+            "id": 4,
+            "name": "Mizani",
+            "styles": ["Wigs", "Weaves"],
+            "location": "VillageMarket",
+            "price": "$$",
+            "image": "/img/Mizani.png"
+        },
+        {
+            "id": 5,
+            "name": "Olurin Beauty",
+            "styles": ["Short Natural", "Barber"],
+            "location": "Langata, Nairobi",
+            "price": "$",
+            "image": "/img/Olurin.png"
+        },
+        {
+            "id": 6,
+            "name": "MC3",
+            "styles": ["Braids", "Wigs", "Natural"],
+            "location": "Kilimani Nairobi",
+            "price": "$",
+            "image": "/img/MC3.png"
         }
     ]
 }

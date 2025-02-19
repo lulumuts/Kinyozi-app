@@ -47,14 +47,14 @@ const setActive = (isLeft) => {
 
 <style scoped>
 .toggle{
-     border: 2px solid #FFE2A7;
+     border: 3px solid #FFE2A7;
      border-radius: 32px;
      display: flex;
      margin-bottom: 24px;
      position: relative;
      overflow:hidden;
-     height: 44px;
-     width: 32vh;
+     height: 44.5px;
+     width: 40vw;
      justify-content: center;
      align-items:center;
 }
@@ -71,8 +71,9 @@ const setActive = (isLeft) => {
     background: transparent;
     font-family: "Azeret Mono", serif;
     font-weight: 600;
-    height: 48px;
-    width: 16vh;
+    font-size: 16px;
+    height: 50px;
+    width: 20vw;
     border: none;
     cursor: pointer;
  }
@@ -94,14 +95,16 @@ const setActive = (isLeft) => {
 }
 
 .left-toggle.active{
-    border-right:2px solid #FFE2A7;
-    border-top: 2px solid #FFE2A7;
-    border-bottom: 2px solid #FFE2A7;
+    padding: 3px;
+    border-right:3px solid #FFE2A7;
+    border-top: 3px solid #FFE2A7;
+    border-bottom: 3px solid #FFE2A7;
 }
 .right-toggle.active{
-    border-left:2px solid #FFE2A7;
-    border-top: 2px solid #FFE2A7;
-    border-bottom: 2px solid #FFE2A7;
+    padding: 3px;
+    border-left:3px solid #FFE2A7;
+    border-top: 3px solid #FFE2A7;
+    border-bottom: 3px solid #FFE2A7;
 }
 
 </style>

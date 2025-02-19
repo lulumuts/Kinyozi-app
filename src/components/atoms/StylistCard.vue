@@ -54,11 +54,11 @@ function setHover(isHovered) {
 
 <style scoped>
 .stylist-card {
-    border: 2px solid #FFE2A7;
+    border: 3px solid #FFE2A7;
     border-radius: 16px;
     display: flex;
     justify-content:space-around;
-    width: 34vh;
+    width: 40vh;
     margin: 16px 0;
 }
 
@@ -76,7 +76,7 @@ img {
 }
 
 .left {
-    border: 2px solid #FFE2A7;
+    border: 3px solid #FFE2A7;
     border-radius: 100%;
     margin: 4%;
     display:flex;
@@ -90,7 +90,7 @@ img {
     display: block;
     justify-content:center;
     margin: auto;
-    width: 16vh;
+    width: 21vh;
 }
 
 
@@ -108,7 +108,7 @@ img {
 .right .styles span, 
 .right p {
     margin: 8px 0;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -125,18 +125,19 @@ img {
     margin-bottom: 20px;
     margin-right: -20px;
     padding: 0;
+    font-weight: 600;
     float: right;
 }
 
 .hovering {
     background: #F5AE20;
-    border: 2px solid #000;
+    border: 3px solid #000;
     cursor: pointer;
     color: #000;
 }
 
 .hovering .left{
-    border: 2px solid #000;
+    border: 3px solid #000;
 }
 
 </style>
