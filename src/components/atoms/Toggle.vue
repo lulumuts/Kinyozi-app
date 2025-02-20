@@ -54,7 +54,7 @@ const setActive = (isLeft) => {
      position: relative;
      overflow:hidden;
      height: 44.5px;
-     width: 40vw;
+     width: 36vw;
      justify-content: center;
      align-items:center;
 }
@@ -73,7 +73,7 @@ const setActive = (isLeft) => {
     font-weight: 600;
     font-size: 16px;
     height: 50px;
-    width: 20vw;
+    width: 18vw;
     border: none;
     cursor: pointer;
  }

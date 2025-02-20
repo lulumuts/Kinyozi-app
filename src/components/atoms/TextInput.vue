@@ -18,7 +18,6 @@
         :id="`${uuid}-error`"
         aria-live="assertive"
         >
-            <!-- {{ error }} -->
         </p>
     </div>
     

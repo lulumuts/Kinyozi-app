@@ -8,6 +8,7 @@
                 leftLabel="Stylists"
                 rightLabel="Salons"
             />
+            <!-- <TodoForm /> -->
         </div>
     
         <div class="stylists-display-section" v-if="isLeftActive">
@@ -42,6 +43,7 @@
 import Toggle from '@/components/atoms/Toggle.vue';
 import StylistCard from '@/components/atoms/StylistCard.vue';
 import SalonCard from '@/components/atoms/SalonCard.vue';
+// import TodoForm from '@/components/TodoForm.vue';
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
 
@@ -95,6 +97,12 @@ onMounted(() => {
 .salon-display-section{
     display: flex;
     justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 16vh;
+    height: 56vh;
+    overflow: scroll;
 }
 .stylists-display-section {
     margin-top: 20vh;
@@ -109,14 +117,14 @@ onMounted(() => {
 }
 .browse-view h1{
     text-align: left;
-    width: 80%;
+    width: 72%;
     margin: 16px auto;
     float: left;
 }
 
 .browse-view p{
     font-size: 16px;
-    width: 80%;
+    width: 72%;
     margin: 0 auto;
     text-align: left;
 }

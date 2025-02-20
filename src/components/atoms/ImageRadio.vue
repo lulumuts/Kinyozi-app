@@ -17,6 +17,14 @@
 
 <script setup>
 import { ref,reactive } from 'vue'
+
+const props = defineProps({
+    selectedItems: {
+        type: Object,
+        default: []
+    }
+})
+const emit = defineEmits(['selectedHair'])
 const images = reactive([
     {url: new URL('@/assets/img/BraidsImage.png', import.meta.url).href, value: 'Braids', selected: false},
     {url: new URL('@/assets/img/LinesImage.png', import.meta.url).href, value: 'Lines', selected: false},
@@ -32,10 +40,15 @@ const hovered = ref({})
 function setHover(value, isHovered) {
     hovered.value[value] = isHovered
 }
+
 function selectHair(style) {
     style.selected = !style.selected
     selectedHair.value = style
+    style.selected ? props.selectedItems.push(style) : null;
+    emit('selectedHair', props.selectedItems)
 }
+
+
 
 </script>
 

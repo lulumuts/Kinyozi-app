@@ -4,8 +4,8 @@
     @mouseover="setHover(true)"
     @mouseleave="setHover(false)"
     >
-        <div class="image-section">
-            <img :src="Image" />
+        <div class="image-section" 
+        :style="{ backgroundImage:  `url('${imageUrl}')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }">
         </div>
         <div class="price">
             <p>{{ Price }}</p>
@@ -52,6 +52,7 @@ const props = defineProps({
     }
 })
 
+const imageUrl = new URL(`${props.Image}`, import.meta.url).href
 const hovered = ref(false)
 
 function setHover(isHovered) {
@@ -67,7 +68,7 @@ function setHover(isHovered) {
     flex-direction: column;
     justify-content: start;
     align-items:end;
-    width: 40%;
+    width: 240px;
     height: 372px;
     margin: 16px;
     text-align:left;
@@ -77,7 +78,6 @@ function setHover(isHovered) {
 .image-section{
     width: 100%;
     height:14vh;
-    /* background: #000; */
     margin: -1.5px auto 0 -1.5px;
     align-self:start;
     border-top-right-radius: 16px; 
@@ -89,9 +89,9 @@ function setHover(isHovered) {
 
 .location svg {
     fill: #FFE2A7;
-    width: 2vh;
+    width: 1.5vh;
     position: relative;
-    margin-right: -8px;
+    margin-right: -5px;
     top: 4px;
 }
 
@@ -111,13 +111,18 @@ function setHover(isHovered) {
     font-weight: 700;
 }
 .content-section p{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
+}
+
+.location p{
+    font-size: 10px!important;
 }
 
 .content-section .type {
     margin: 8px 0;
-    font-size: 14px;
+    font-size: 12px;
+    display: inline-block;
     font-weight: 500;
 }
 .content-section .type:nth-child(1):after{
@@ -134,6 +139,7 @@ function setHover(isHovered) {
     color: #FFE2A7;
     position: relative;
     right: 16px;
+    font-weight: 600;
 }
 
 .hovering {
@@ -154,5 +160,10 @@ function setHover(isHovered) {
 
 .hovering svg {
     fill: #000;
+}
+
+.styles {
+    display: flex;
+    flex-wrap: wrap;
 }
 </style>

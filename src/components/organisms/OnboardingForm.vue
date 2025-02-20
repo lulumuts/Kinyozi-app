@@ -6,9 +6,13 @@ import SelectInput from '@/components/atoms/SelectInput.vue'
 import SuccessCard from '@/components/atoms/SuccessCard.vue'
 import ImageRadio from '@/components/atoms/ImageRadio.vue'
 import Button from '@/components/atoms/Button.vue'
+import { useTodoListStore } from '@/stores/TodoList'
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 import { ref, reactive, watch } from 'vue'
+import {useRouter} from 'vue-router'
 
+
+const router = useRouter()
 const props = defineProps({
     backgroundColor: {
         type: String,
@@ -19,6 +23,7 @@ const currentStep = ref(0)
 const selectedValue = ref(0)
 const selectedBudget=ref("")
 const showLoader = ref(false)
+const selectedHair = ref(null)
 
 const emit = defineEmits(['updateStep'])
 
@@ -29,11 +34,15 @@ watch(currentStep, (newStep) => {
 watch(currentStep, (value)  => {
     if(value === 4) {
         setInterval(() => {
-            return showLoader.value = true
-        }, 1500)
-        clearInterval()
-    }
+            showLoader.value = true
 
+            setInterval(() => {
+            router.push('/browse')
+        },1500)
+        }, 3500)
+        
+   
+    }
 })
 
 
@@ -60,8 +69,10 @@ watch(selectedValue, (value)  => {
                 phoneNumber: '',
                 email: '',
                 address: '',
+                budget: selectedBudget.value
             })
 
+        const store = useTodoListStore()
             
             const styleOptions = [
                 { label: 'I already have a hair stylist in mind', value: 1},
@@ -70,7 +81,35 @@ watch(selectedValue, (value)  => {
                 { label: 'I want to explore your selection first', value: 4}
             ]
 
+            function getSelectedHair(item) {
+                selectedHair.value = item
+                userDetails.value = {
+                    ...userDetails.value,
+                    selectedHair: item
+                }
+            }
+
             function nextStep() {
+                if(currentStep.value === 1) {
+                    
+                    userDetails.value = {
+                                name: '',
+                                phoneNumber: '',
+                                email: '',
+                                address: '',
+                                }
+                    selectedBudget.value = ''
+                }
+
+                if(currentStep.value === 2) {
+                    getSelectedHair()
+                }
+                
+                if(currentStep.value === 3) {
+                    getSelectedHair()
+                }
+                store.addTodo(userDetails)
+
                 if(currentStep.value <= 4) {
                     currentStep.value++ 
                     for(let i=0; i < steps.length; i++) {
@@ -120,6 +159,7 @@ watch(selectedValue, (value)  => {
         <p class="subtitle">We have a variety of stylists and salons on our platform we would love to link you with.</p>
         <svg class="separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle-small</title><path d="M12,10A2,2 0 0,0 10,12C10,13.11 10.9,14 12,14C13.11,14 14,13.11 14,12A2,2 0 0,0 12,10Z" /></svg>
         <p class="captions">Create an account and we will use these details curate your experience</p>   
+        <form @submit.prevent="addUser()">
         <TextInput
            v-bind="$attrs"
            v-model="userDetails.name"
@@ -153,12 +193,13 @@ watch(selectedValue, (value)  => {
             v-model="selectedBudget"
             label="budget"
             />
+        </form>
         </div>
 
         <div class="step-four" v-if="steps[3].state">
             <h1>Select your Hairstyles</h1>
             <p>With this selection we will recommend the best stylist/salons for you.</p>
-            <ImageRadio />
+            <ImageRadio @selectedHair="getSelectedHair"/>
         </div>
 
         <div class="step-five" v-if="steps[4].state">
