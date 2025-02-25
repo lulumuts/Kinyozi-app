@@ -1,35 +1,60 @@
-# vue-app
+# Kinyozi App
 
-This template should help get you started developing with Vue 3 in Vite.
+Kinyozi is a salon and stylist discovery app tailored for Black women, helping users find, book, and maintain their haircare routines.
 
-## Recommended IDE Setup
+## 🌟 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### ✅ Completed
 
-## Customize configuration
+- Onboarding Flow – A guided experience for new users.
+- Browse Feature – Users can explore salons and stylists.
+- Mock API – Uses JSON Server to serve sample data.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 🚧 In Progress
 
-## Project Setup
+- Form Validation – Ensuring input accuracy and smooth UX.
+- ChatGPT API Integration – AI-powered haircare suggestions.
+- Authentication – Secure login and user accounts.
+- Building Salon/Stylists details page
 
-```sh
+### 🛠️ Tech Stack
+
+- Frontend: Vue 3
+- Backend: JSON Server (temporary mock API)
+- Hosting: Render
+
+### 🚀 Setup & Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/your-username/kinyozi.git
+cd kinyozi
+
+```
+
+Install dependencies:
+
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Start the development server:
 
-```sh
+```
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 📌 Roadmap
 
-```sh
-npm run build
-```
+- Implement form validation
+- Building Salon/Stylists sign up view
+- Integrate ChatGPT API
+- Add authentication and user profiles
+- Deploy full-featured backend
 
-### Lint with [ESLint](https://eslint.org/)
+### 🎨 UI Preview
 
-```sh
-npm run lint
-```
+Demo Link --> https://kinyozi-app.onrender.com
+
+/assets/img/Kinyozi-splashscreen.png

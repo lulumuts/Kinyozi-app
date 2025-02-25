@@ -1,6 +1,6 @@
 <template>
     <div class="select-input">
-        <label v-if="label">Budget</label><br>
+        <!-- <label v-if="label">Budget</label><br> -->
     <select
     v-model="selectedValue"
     :placeholder="label"
@@ -48,8 +48,8 @@ import {defineProps, defineModel} from 'vue'
 <style scoped>
 select {
     margin: auto x;
-    padding: 5% 5%;
-    width: 98%;
+    padding: 16px;
+    width: 100%;
     margin-left: 5%;
     border-radius: 8px;
     border: 2px solid #000;

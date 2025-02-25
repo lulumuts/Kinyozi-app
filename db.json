@@ -97,7 +97,7 @@
         {
             "id": 1,
             "name": "Talebu",
-            "styles": ["Braids", "Short Natural", "Weave", "Barber"],
+            "styles": ["Braids", "Natural", "Weave", "Barber"],
             "location": "Westlands, Nairobi",
             "price": "$$",
             "image": "/img/Talebu.png"

@@ -1,6 +1,6 @@
 <template>
     <div class="text-input">
-        <label :for="uuid" :label="label">{{ label }}</label><br>
+        <!-- <label :for="uuid" :label="label">{{ label }}</label><br> -->
         <input 
         :placeholder="label" 
         class="field" 
@@ -23,11 +23,10 @@
     
 </template>
 
-<script>
+<script setup>
 import UniqueID from '@/services/UniqueID'
 
-export default {
-    props: {
+    const props= defineProps({
         label: {
             type: String,
             default: ''
@@ -39,21 +38,19 @@ export default {
         error: {
             type: String,
             default: ''
-        }
-    },
-    setup () {
-        const uuid = UniqueID().getID()
-        return {
-            uuid
-        }
-    }
-}
+        },
+    })
+
+
+    const uuid = UniqueID().getID()
+    
+
 </script>
 
 <style scoped>
 input, select {
     margin: auto;
-    padding: 6% 4%;
+    padding: 16px;
     width: 100%;
     border-radius: 8px;
     border: 2px solid #000;

@@ -8,6 +8,7 @@ import ImageRadio from '@/components/atoms/ImageRadio.vue'
 import Button from '@/components/atoms/Button.vue'
 import { useTodoListStore } from '@/stores/TodoList'
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
+import { useField } from 'vee-validate'
 import { ref, reactive, watch } from 'vue'
 import {useRouter} from 'vue-router'
 
@@ -38,7 +39,7 @@ watch(currentStep, (value)  => {
 
             setInterval(() => {
             router.push('/browse')
-        },1500)
+        },1000)
         }, 3500)
         
    
@@ -66,7 +67,8 @@ watch(selectedValue, (value)  => {
 
         const userDetails = ref({
                 name: '',
-                phoneNumber: '',
+                password:'',
+                phonenumber: '',
                 email: '',
                 address: '',
                 budget: selectedBudget.value
@@ -89,12 +91,28 @@ watch(selectedValue, (value)  => {
                 }
             }
 
+            function addUser() {
+                alert('Submitted!')
+            }
+
+        const email = useField('email', function(value) {
+        if(!value)  return 'This field is required'
+
+        const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if(!regex.text(String(value).toLowerCase())) {
+            return 'Please enter a valid email address'
+        }
+        return true
+    })
+
             function nextStep() {
                 if(currentStep.value === 1) {
                     
                     userDetails.value = {
                                 name: '',
-                                phoneNumber: '',
+                                password: '',
+                                phonenumber: '',
                                 email: '',
                                 address: '',
                                 }
@@ -123,6 +141,8 @@ watch(selectedValue, (value)  => {
                 }    
             }
         }
+
+        
 
 </script>
 
@@ -170,7 +190,7 @@ watch(selectedValue, (value)  => {
            <TextInput
            v-bind="$attrs"
            v-model="userDetails.phonenumber"
-           label="PhoneNumber"
+           label="Phone"
            type="text"
            error="This input has an error!"
            />
@@ -178,7 +198,15 @@ watch(selectedValue, (value)  => {
            v-bind="$attrs"
            v-model="userDetails.email"
            label="Email"
-           type="text"
+           type="email"
+           error="This input has an error!"
+           />
+
+           <TextInput
+           v-bind="$attrs"
+           v-model="userDetails.password"
+           label="Password"
+           type="password"
            error="This input has an error!"
            />
            <TextInput
@@ -191,7 +219,7 @@ watch(selectedValue, (value)  => {
            <SelectInput 
             :options="budgetCost"
             v-model="selectedBudget"
-            label="budget"
+            label="Budget"
             />
         </form>
         </div>
@@ -208,14 +236,19 @@ watch(selectedValue, (value)  => {
               <DotLottieVue v-if="showLoader" class="lottie" style="height: 250px; width: 250px" autoplay loop src="https://lottie.host/d28b66f1-376f-45cb-bb19-bf18a400aaf7/WjUG6rlsWk.lottie" />
 
         </div>
-        <Button @click="nextStep" v-if="!steps[1].state && !steps[4].state">Next</Button>
+        <Button 
+        @click="nextStep" 
+        type="submit"
+        v-if="!steps[1].state && !steps[4].state">
+        Next
+      </Button>
     </div>
 </template>
 
 
 <style scoped>
 .multi-select{
-    margin: 20%;
+    margin: 10%;
     font-family: "Azeret Mono", serif;
     font-size: 16px;
     
@@ -249,6 +282,7 @@ li {
 }
 .step-two h1, .step-three h1, .step-four h1{
     padding: 0 16%;
+    text-align: left;
     line-height: 48px;
     text-transform: capitalize;
     color: #FFE2A7;
