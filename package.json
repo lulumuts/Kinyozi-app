@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173",
+    "build": "npm install && vite build",
+    "preview": "vite preview --port 3000",
     "lint": "eslint . --ext .vue, .js, .jsx, .cjs, .mjs --fix, --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
