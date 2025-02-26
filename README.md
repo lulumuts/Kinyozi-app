@@ -57,4 +57,4 @@ npm run dev
 
 Demo Link --> https://kinyozi-app.onrender.com
 
-/assets/img/Kinyozi-splashscreen.png
+/src/public/img/Kinyozi-splashscreen.png
